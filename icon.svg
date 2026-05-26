@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="felt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9eaa86"/>
+      <stop offset="1" stop-color="#7a8567"/>
+    </linearGradient>
+    <radialGradient id="lensSheen" cx="0.25" cy="0.25" r="0.7">
+      <stop offset="0" stop-color="#f3d57a" stop-opacity="0.85"/>
+      <stop offset="0.6" stop-color="#1a1410" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sage felt rounded-square background -->
+  <rect width="256" height="256" rx="36" fill="url(#felt)"/>
+
+  <!-- Hair: silver curl cap. Layered base / shadow / highlight so the
+       silhouette holds up even at very small render sizes. -->
+  <g fill="#ededeb">
+    <circle cx="60" cy="100" r="32"/>
+    <circle cx="92" cy="74" r="32"/>
+    <circle cx="128" cy="62" r="32"/>
+    <circle cx="164" cy="74" r="32"/>
+    <circle cx="196" cy="100" r="32"/>
+  </g>
+  <g fill="#bdbdb8">
+    <circle cx="60" cy="110" r="24"/>
+    <circle cx="92" cy="84" r="24"/>
+    <circle cx="128" cy="72" r="24"/>
+    <circle cx="164" cy="84" r="24"/>
+    <circle cx="196" cy="110" r="24"/>
+  </g>
+  <g fill="#ffffff" opacity="0.55">
+    <circle cx="55" cy="92" r="9"/>
+    <circle cx="87" cy="66" r="9"/>
+    <circle cx="123" cy="54" r="9"/>
+    <circle cx="159" cy="66" r="9"/>
+    <circle cx="191" cy="92" r="9"/>
+  </g>
+
+  <!-- Face oval -->
+  <ellipse cx="128" cy="152" rx="76" ry="78" fill="#f2cdaf"/>
+
+  <!-- Blush -->
+  <ellipse cx="74" cy="176" rx="12" ry="9" fill="#d49d80" opacity="0.55"/>
+  <ellipse cx="182" cy="176" rx="12" ry="9" fill="#d49d80" opacity="0.55"/>
+
+  <!-- Oversized square sunglasses. The big silhouette is what makes the
+       icon read at 32x32. -->
+  <g>
+    <!-- Left lens -->
+    <rect x="46" y="118" width="72" height="46" fill="#15110c" stroke="#2e2118" stroke-width="4" rx="6"/>
+    <rect x="52" y="124" width="32" height="20" fill="url(#lensSheen)"/>
+    <!-- Right lens -->
+    <rect x="138" y="118" width="72" height="46" fill="#15110c" stroke="#2e2118" stroke-width="4" rx="6"/>
+    <rect x="144" y="124" width="32" height="20" fill="url(#lensSheen)"/>
+    <!-- Bridge -->
+    <line x1="118" y1="141" x2="138" y2="141" stroke="#2e2118" stroke-width="5"/>
+    <!-- Temple-arm stubs visible past each lens -->
+    <line x1="46" y1="141" x2="34" y2="146" stroke="#2e2118" stroke-width="5" stroke-linecap="round"/>
+    <line x1="210" y1="141" x2="222" y2="146" stroke="#2e2118" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Smile -->
+  <path d="M 96 200 Q 128 224 160 200" stroke="#9e2e38" stroke-width="7" fill="none" stroke-linecap="round"/>
+
+  <!-- A single playing card peeking up from the bottom-right corner so
+       the icon reads as "card night" even when the grandma's whole
+       face isn't visible (e.g. cropped Steam capsule). -->
+  <g transform="rotate(18 218 232)">
+    <rect x="196" y="208" width="42" height="56" fill="#f5edd6" stroke="#3d2718" stroke-width="3" rx="4"/>
+    <path d="M 217 226 c -3 -4 -11 -4 -11 3 c 0 7 11 13 11 13 c 0 0 11 -6 11 -13 c 0 -7 -8 -7 -11 -3 z" fill="#9e2e38"/>
+  </g>
+</svg>
