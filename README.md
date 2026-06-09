@@ -1,48 +1,73 @@
-# Card Night At Gigi's — public docs
+# Joey Beans Games — public site
 
-Support, privacy, and marketing pages for the App Store / Play / Steam release. This repo also hosts the pages for **All Fours in Ashes** under `ashes/` (see below).
+The web home for **Joey Beans Games LLC** and its titles. Hosted on GitHub Pages.
 
-Live at: https://adamskijow.github.io/GigiPubDocs/
+- **Live (custom domain):** https://joeybeansgames.com/ — *after DNS is set up (see below)*
+- **Live (GitHub default):** https://adamskijow.github.io/GigiPubDocs/ — redirects to the custom domain once configured
 
-- `index.html` — marketing landing (Apple **Marketing URL**)
-- `support.html` — Apple **Support URL**
-- `privacy.html` — **Privacy Policy URL**
+## Structure
 
-## All Fours in Ashes (`ashes/`)
+```
+/                     Studio landing page (Joey Beans Games LLC)
+  index.html
+  style.css
+  icon.svg
+  CNAME               -> joeybeansgames.com (binds the custom domain)
+  support.html        redirect stub -> gigi/support.html (legacy Apple URL)
+  privacy.html        redirect stub -> gigi/privacy.html (legacy Apple URL)
 
-A second title's pages, in the `ashes/` subfolder. Same structure, its own folk-horror theme (`ashes/style.css`, `ashes/icon.svg`); no em dashes per that game's house style.
+/gigi/                Card Night At Gigi's (App Store / Play / Steam)
+  index.html          Apple Marketing URL
+  support.html        Apple Support URL
+  privacy.html        Privacy Policy URL
 
-Live at: https://adamskijow.github.io/GigiPubDocs/ashes/
+/ashes/               All Fours in Ashes (Steam)
+  index.html          Steam Website URL
+  support.html        Steam Support URL
+  privacy.html        Privacy Policy URL
+```
 
-- `ashes/index.html`: marketing landing (Steam **Website URL**)
-- `ashes/support.html`: Steam **Support URL**
-- `ashes/privacy.html`: **Privacy Policy URL**
+The redirect stubs at the root keep the old `…/support.html` and `…/privacy.html`
+links working, since *Card Night* moved into `gigi/`.
 
-Steam store fields to paste:
-- Website: `https://adamskijow.github.io/GigiPubDocs/ashes/`
-- Support URL: `https://adamskijow.github.io/GigiPubDocs/ashes/support.html`
-- Privacy Policy URL: `https://adamskijow.github.io/GigiPubDocs/ashes/privacy.html`
+## Store fields to use
 
-The Steam button on `ashes/index.html` still links to `#`; swap it for the real store URL once the app page is public. Not blocking; Steam only needs the support and privacy URLs above to resolve.
+**Card Night At Gigi's** (update these in App Store Connect / Play / Steam):
+- Marketing / Website: `https://joeybeansgames.com/gigi/`
+- Support URL: `https://joeybeansgames.com/gigi/support.html`
+- Privacy Policy URL: `https://joeybeansgames.com/gigi/privacy.html`
 
-## First-time GitHub Pages setup
+**All Fours in Ashes** (Steam):
+- Website: `https://joeybeansgames.com/ashes/`
+- Support URL: `https://joeybeansgames.com/ashes/support.html`
+- Privacy Policy URL: `https://joeybeansgames.com/ashes/privacy.html`
 
-1. Push to `main`:
-   ```bash
-   git add .
-   git commit -m "initial site"
-   git push -u origin main
-   ```
-2. On GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch → main / (root) → Save**.
-3. Wait ~1 minute, then verify:
-   - https://adamskijow.github.io/GigiPubDocs/
-   - https://adamskijow.github.io/GigiPubDocs/support.html
-   - https://adamskijow.github.io/GigiPubDocs/privacy.html
+The store buttons on `gigi/index.html` and the Steam button on `ashes/index.html`
+still link to `#`. Swap them for the real store URLs once the pages are public.
+
+## Connecting the custom domain (one-time)
+
+The domain is registered on Cloudflare. GitHub Pages allows **one custom domain per
+repo** — this repo serves `joeybeansgames.com`.
+
+**1. Cloudflare → DNS.** Add these records and set every one to **DNS only (grey
+cloud), not Proxied (orange)** — the orange proxy blocks GitHub's TLS certificate:
+
+| Type  | Name | Value                    |
+|-------|------|--------------------------|
+| A     | `@`  | `185.199.108.153`        |
+| A     | `@`  | `185.199.109.153`        |
+| A     | `@`  | `185.199.110.153`        |
+| A     | `@`  | `185.199.111.153`        |
+| CNAME | `www`| `adamskijow.github.io`   |
+
+**2. GitHub → repo Settings → Pages.** Confirm **Custom domain** reads
+`joeybeansgames.com` (the `CNAME` file sets this on push). Wait ~15–60 min for the
+DNS check and certificate, then tick **Enforce HTTPS**.
+
+**3. (Optional) Verify the domain** under GitHub account Settings → Pages to prevent
+takeover.
 
 ## Updating
 
-Edit, commit, push. Pages redeploys in under a minute.
-
-## Before App Store submission
-
-The three store buttons on `index.html` still link to `#`. Swap them for real store URLs once you have them. Not blocking — Apple only needs the three URLs above to resolve.
+Edit, commit, push to `main`. GitHub Pages redeploys in under a minute.
