@@ -45,7 +45,7 @@ header.site .logo {
   display: flex; align-items: center; justify-content: center;
   color: var(--cream);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   font-family: Georgia, "Times New Roman", serif;
 }
 
@@ -81,9 +81,8 @@ h2 {
 }
 
 h3 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 18px;
-  margin: 0 0 6px;
+  font-size: 16px;
+  margin: 24px 0 6px;
 }
 
 p, li { font-size: 16px; }
@@ -91,7 +90,7 @@ p, li { font-size: 16px; }
 .tagline {
   font-size: 18px;
   color: var(--muted);
-  margin: 0;
+  margin: 0 0 28px;
 }
 
 .hero {
@@ -105,31 +104,51 @@ p, li { font-size: 16px; }
 .hero h1 { color: var(--cream); }
 .hero .tagline { color: #d8e6dc; }
 
-.titles {
+.games {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
   margin: 18px 0 4px;
   padding: 0;
   list-style: none;
 }
 
-.title-card {
-  background: #fff;
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: 22px 22px 20px;
-  display: flex;
-  flex-direction: column;
+.games li {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
 }
 
-.title-card p { color: #2c2a26; margin: 0 0 16px; }
+.stores {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-.title-link {
-  margin-top: auto;
+.store-btn {
+  display: inline-block;
+  background: var(--cream);
+  color: var(--ink);
+  padding: 10px 16px;
+  border-radius: 8px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   text-decoration: none;
+}
+
+.store-btn:hover { background: #fff; color: var(--felt-dark); }
+
+dl.faq dt {
+  font-weight: 600;
+  margin-top: 18px;
+}
+
+dl.faq dd {
+  margin: 4px 0 0;
+  color: #2c2a26;
 }
 
 .contact-card {
@@ -156,9 +175,6 @@ footer.site {
   flex-wrap: wrap;
   gap: 8px;
 }
-
-footer.site a { color: var(--muted); }
-footer.site a:hover { color: var(--ink); }
 
 @media (max-width: 540px) {
   h1 { font-size: 30px; }
