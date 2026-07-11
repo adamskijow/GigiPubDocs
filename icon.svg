@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Joey Beans Games">
-  <rect width="64" height="64" rx="14" fill="#1e6b3a"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" fill="#f6f1e4">JB</text>
+  <rect width="64" height="64" rx="14" fill="#15110d"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="#e8a33d" stroke-opacity="0.4" stroke-width="2"/>
+  <text x="32" y="43" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="27" font-weight="700" fill="#e8a33d">JB</text>
 </svg>

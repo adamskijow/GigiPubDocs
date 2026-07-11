@@ -2,8 +2,8 @@
 
 The web home for **Joey Beans Games LLC** and its titles. Hosted on GitHub Pages.
 
-- **Live (custom domain):** https://joeybeansgames.com/ — *after DNS is set up (see below)*
-- **Live (GitHub default):** https://adamskijow.github.io/GigiPubDocs/ — redirects to the custom domain once configured
+- **Live:** https://adamskijow.github.io/GigiPubDocs/
+- **Planned custom domain:** https://joeybeansgames.com/ — after DNS is configured
 
 ## Structure
 
@@ -12,7 +12,6 @@ The web home for **Joey Beans Games LLC** and its titles. Hosted on GitHub Pages
   index.html
   style.css
   icon.svg
-  CNAME               -> joeybeansgames.com (binds the custom domain)
   support.html        redirect stub -> gigi/support.html (legacy Apple URL)
   privacy.html        redirect stub -> gigi/privacy.html (legacy Apple URL)
 
@@ -42,8 +41,8 @@ links working, since *Card Night* moved into `gigi/`.
 - Support URL: `https://joeybeansgames.com/ashes/support.html`
 - Privacy Policy URL: `https://joeybeansgames.com/ashes/privacy.html`
 
-The store buttons on `gigi/index.html` and the Steam button on `ashes/index.html`
-still link to `#`. Swap them for the real store URLs once the pages are public.
+The Steam buttons use the titles' public Steam URLs. Add App Store and Google
+Play buttons to `gigi/index.html` only after their final public URLs are known.
 
 ## Connecting the custom domain (one-time)
 
@@ -61,11 +60,13 @@ cloud), not Proxied (orange)** — the orange proxy blocks GitHub's TLS certific
 | A     | `@`  | `185.199.111.153`        |
 | CNAME | `www`| `adamskijow.github.io`   |
 
-**2. GitHub → repo Settings → Pages.** Confirm **Custom domain** reads
-`joeybeansgames.com` (the `CNAME` file sets this on push). Wait ~15–60 min for the
-DNS check and certificate, then tick **Enforce HTTPS**.
+**2. Add a `CNAME` file** containing `joeybeansgames.com`, commit it, and push.
 
-**3. (Optional) Verify the domain** under GitHub account Settings → Pages to prevent
+**3. GitHub → repo Settings → Pages.** Confirm **Custom domain** reads
+`joeybeansgames.com`. Wait ~15–60 min for the DNS check and certificate, then
+tick **Enforce HTTPS**.
+
+**4. (Optional) Verify the domain** under GitHub account Settings → Pages to prevent
 takeover.
 
 ## Updating
