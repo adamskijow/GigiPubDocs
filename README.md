@@ -2,7 +2,7 @@
 
 The web home for **Joey Beans Games LLC** and its titles. Hosted on GitHub Pages.
 
-- **Live:** https://joeybeans.com/
+- **Live:** https://joeybeansgames.com/
 - **GitHub Pages fallback:** https://adamskijow.github.io/GigiPubDocs/
 
 ## Structure
@@ -32,14 +32,14 @@ links working, since *Card Night* moved into `gigi/`.
 ## Store fields to use
 
 **Card Night At Gigi's** (update these in App Store Connect / Play / Steam):
-- Marketing / Website: `https://joeybeans.com/gigi/`
-- Support URL: `https://joeybeans.com/gigi/support.html`
-- Privacy Policy URL: `https://joeybeans.com/gigi/privacy.html`
+- Marketing / Website: `https://joeybeansgames.com/gigi/`
+- Support URL: `https://joeybeansgames.com/gigi/support.html`
+- Privacy Policy URL: `https://joeybeansgames.com/gigi/privacy.html`
 
 **All Fours in Ashes** (Steam):
-- Website: `https://joeybeans.com/ashes/`
-- Support URL: `https://joeybeans.com/ashes/support.html`
-- Privacy Policy URL: `https://joeybeans.com/ashes/privacy.html`
+- Website: `https://joeybeansgames.com/ashes/`
+- Support URL: `https://joeybeansgames.com/ashes/support.html`
+- Privacy Policy URL: `https://joeybeansgames.com/ashes/privacy.html`
 
 The Steam buttons use the titles' public Steam URLs. Add App Store and Google
 Play buttons to `gigi/index.html` only after their final public URLs are known.
@@ -47,7 +47,7 @@ Play buttons to `gigi/index.html` only after their final public URLs are known.
 ## Connecting the custom domain (one-time)
 
 The domain is registered on Cloudflare. GitHub Pages allows **one custom domain per
-repo** — this repo serves `joeybeans.com`.
+repo** — this repo serves `joeybeansgames.com`.
 
 **1. Cloudflare → DNS.** Add these records and set every one to **DNS only (grey
 cloud), not Proxied (orange)** — the orange proxy blocks GitHub's TLS certificate:
@@ -60,10 +60,10 @@ cloud), not Proxied (orange)** — the orange proxy blocks GitHub's TLS certific
 | A     | `@`  | `185.199.111.153`        |
 | CNAME | `www`| `adamskijow.github.io`   |
 
-**2. Add a `CNAME` file** containing `joeybeans.com`, commit it, and push.
+**2. Add a `CNAME` file** containing `joeybeansgames.com`, commit it, and push.
 
 **3. GitHub → repo Settings → Pages.** Confirm **Custom domain** reads
-`joeybeans.com`. Wait ~15–60 min for the DNS check and certificate, then
+`joeybeansgames.com`. Wait ~15–60 min for the DNS check and certificate, then
 tick **Enforce HTTPS**.
 
 **4. (Optional) Verify the domain** under GitHub account Settings → Pages to prevent
